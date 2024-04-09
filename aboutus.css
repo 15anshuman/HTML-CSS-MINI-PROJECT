@@ -1,0 +1,124 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+    background-size: 100em;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    /* margin: 50px auto;  */
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: #f9f9f9;
+    float: right;
+    margin-top: 100px;
+    margin-right: 50px;
+    
+}
+
+header {
+    background-color: black;
+    box-shadow: 0 0 10px white;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    position: relative;
+    padding: 0 15px; 
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px; 
+    padding: 0 10px; 
+    display: block;
+}
+
+nav li a:hover {
+    color: aqua;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px 0;
+}
+
+.dropdown li {
+    display: block;
+}
+
+.dropdown li a {
+    padding: 10px 20px;
+    color: white;
+}
+
+.dropdown li a:hover {
+    background-color: #333;
+}
+
+nav li:hover .dropdown {
+    display: block;
+}
+
+.logo {
+    height: 40px;
+    display: block;
+}
+
+.logo-container {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: 100px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .logo-container {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    nav li {
+        padding: 0 15px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+}

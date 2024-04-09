@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactus.css">
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body background="background_image_car.jpg">
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="miniproject.html" class="home">Home</a></li>
+                <li>
+                    <a href="#">Cars</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Sedans</a></li>
+                        <li><a href="#">Trucks</a></li>
+                        <li><a href="#">SUVs</a></li>
+                    </ul>
+                </li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="contactus.html">Contact us</a></li>
+                <li><a href="buynow.html">Buy now</a></li>
+                <li class="logo-container"><a href="#"><img src="car_logo_mp.PNG" alt="Logo" class="logo"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: contact@example.com</p>
+            <p>Phone: +1 123 456 7890</p>
+            <p>Address: 123 Main St, City, Country</p>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Form</h2>
+            <form id="contactForm" action="submit_form.php" method="POST" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <div id="errorName" class="error-message"></div>
+                <div id="errorEmail" class="error-message"></div>
+                <div id="errorMessage" class="error-message"></div>
+                <div class="submit">
+                    <a href="submit.html">
+                        <button>Send message</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+         
+    <footer>
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var message = document.getElementById('message').value.trim();
+
+            var errorName = document.getElementById('errorName');
+            var errorEmail = document.getElementById('errorEmail');
+            var errorMessage = document.getElementById('errorMessage');
+
+            errorName.textContent = '';
+            errorEmail.textContent = '';
+            errorMessage.textContent = '';
+
+            if (name === '') {
+                errorName.textContent = 'Please enter your name.';
+                return false;
+            }
+
+            if (email === '') {
+                errorEmail.textContent = 'Please enter your email.';
+                return false;
+            } else if (!isValidEmail(email)) {
+                errorEmail.textContent = 'Please enter a valid email address.';
+                return false;
+            }
+
+            if (message === '') {
+                errorMessage.textContent = 'Please enter your message.';
+                return false;
+            }
+
+            return true;
+        }
+
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
